@@ -1,0 +1,34 @@
+<div class="main_container">
+  <div class="jumbotron">
+    <h4 class="text-center">Todos</h4>
+  </div>
+
+
+  <div class="input-group mb-3">
+    <input style="padding: 15px; font-size: 15px;" type="text" class="form-control" #itemTitle
+      (keyup.enter)="onAdd(itemTitle)" required placeholder="Create the new todo" aria-label="Recipient's username"
+      aria-describedby="button-addon2">
+    <button class="btn btn-outline-secondary" (click)="onAdd(itemTitle)" type="button" id="button-addon2"><i
+        class="fa fa-plus-square fa-lg"></i></button>
+  </div>
+
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let item of toDoService.toDoListArray">
+      <span class="hover-cursor" [class.text-success]="item.isChecked" (click)="alterCheck(item.$key, item.isChecked)">
+        <i class=" fa-lg" [ngClass]="item.isChecked ? 'far fa-check-circle': 'far fa-circle'"> </i>
+      </span>
+      {{item.title}}
+      <span class="hover-cursor pull-right" (click)="onDelete(item.$key)">
+        <i style="float: right; color: red;" class="fas fa-trash fa-lg"></i>
+      </span>
+    </li>
+  </ul>
+
+
+  <div class="btn_container">
+    <button (click)="showChecked()" type="button" class="btn btn-light"><i class="fas fa-check-double"></i></button>
+    <button (click)="showUnchecked()" type="button" class="btn btn-light"><i class="fas fa-check"></i></button>
+    <button (click)="ngOnInit()" type="button" class="btn btn-light"><i class="fas fa-tasks"></i></button>
+  </div>
+
+</div>

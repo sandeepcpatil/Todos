@@ -1,0 +1,21 @@
+.main_container{
+    margin-top: 50px;
+    height: auto;
+    width: auto;
+    color: #747d8c;
+    /* background-color: #747d8c; */
+}
+
+.btn_container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 4px;
+    color: #747d8c;
+}
+
+
+li{
+    padding: 15px;
+    font-size: 18px;
+}
+

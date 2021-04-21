@@ -1,0 +1,14 @@
+
+  <div>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let item of toDoService.toDoListArray">
+        <span class="hover-cursor" [class.text-success]="item.isChecked"
+          (click)="alterCheck(item.$key, item.isChecked)">
+          <i class=" fa-lg" [ngClass]="item.isChecked ? 'far fa-check-circle': 'far fa-circle'"> </i>
+        </span>
+        {{item.title}}
+        <span class="hover-cursor pull-right" (click)="onDelete(item.$key)">
+          <i style="float: right; color: red;" class="fas fa-trash fa-lg"></i>
+        </span>
+      </li>
+    </ul>
